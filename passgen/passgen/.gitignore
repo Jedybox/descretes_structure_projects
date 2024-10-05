@@ -1,0 +1,17 @@
+# Dart tool files
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE settings
+.idea/
+*.iml
+
+# Build output
+build/
+
+# Flutter specific
+pubspec.lock (if not needed)
+
+# Other
+*.log
