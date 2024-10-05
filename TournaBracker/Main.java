@@ -12,7 +12,7 @@ class Main extends JFrame implements ActionListener {
     private JLabel permutaionLabel;
 
     Main() {
-        this.setTitle("TournaBracker");
+        this.setTitle("Match Maker");
         this.setSize(600, 600);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -25,7 +25,7 @@ class Main extends JFrame implements ActionListener {
         titlePanel.setBackground(Color.BLACK);
 
         // Title Label
-        JLabel titleLabel = new JLabel("TournaBracker");
+        JLabel titleLabel = new JLabel("Match Maker");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setForeground(Color.WHITE);
 
@@ -63,7 +63,7 @@ class Main extends JFrame implements ActionListener {
         permutationPanel.setPreferredSize(new Dimension(100, 150));
         permutationPanel.setVisible(true);
         this.permutaionLabel = new JLabel();
-        permutationPanel.add(new JLabel("Permutations:"));
+        permutationPanel.add(new JLabel("Combitations:"));
         permutationPanel.add(permutaionLabel);
 
         // Sidebar Panel
@@ -76,7 +76,7 @@ class Main extends JFrame implements ActionListener {
         sidPanel.add(permutationPanel);
 
         bracketPanel = new JPanel();
-        bracketPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        bracketPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 15));
         bracketPanel.setPreferredSize(new Dimension(400, 400));
 
         // Add components
@@ -109,27 +109,16 @@ class Main extends JFrame implements ActionListener {
     }
 
     private void generateBracket() {
-        if (this.teams.size() == 0) {
+        if (this.teams.size() < 2) {
             JOptionPane.showMessageDialog(this, "No teams to generate matches", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        ArrayList<Team> matches = Linear.generatePermutuation(this.teams);
+        ArrayList<Match> matches = Combinations.generateMatches(this.teams);
         this.bracketPanel.removeAll();
 
-        if (matches.size() % 2 == 0) {
-            for (int i = 1; i <= matches.size()-1; i += 2) {
-                Match match = new Match(matches.get(i - 1), matches.get(i));
-                this.bracketPanel.add(match);
-            }
-        } else {
-            for (int i = 1; i <= matches.size()-2; i += 2) {
-                Match match = new Match(matches.get(i - 1), matches.get(i));
-                this.bracketPanel.add(match);
-            }
-            Match match = new Match(matches.get(matches.size() - 1));
+        for (Match match : matches) 
             this.bracketPanel.add(match);
-        }
 
         this.bracketPanel.revalidate();
         this.bracketPanel.repaint();
@@ -167,8 +156,12 @@ class Main extends JFrame implements ActionListener {
         this.bracketPanel.revalidate();
         this.bracketPanel.repaint();
         
-        this.permutaionLabel.setText(String.valueOf(Linear.posiblePermutations(this.teams.size())));
-
+        if (this.teams.size() > 1) {
+            this.permutaionLabel.setText(Integer.toString(Combinations.posibleCombinations(this.teams.size())));
+            this.permutaionLabel.revalidate();
+            this.permutaionLabel.repaint();
+        }
+            
     }
 
     private void clearTeams() {

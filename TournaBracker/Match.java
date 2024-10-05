@@ -5,7 +5,12 @@ import javax.swing.JPanel;
 
 public class Match extends JPanel{
 
+    private Team team1;
+    private Team team2;
+
     Match(Team team1, Team team2){
+        this.team1 = team1;
+        this.team2 = team2;
 
         this.setSize(200, 50);
         this.setOpaque(false);
@@ -40,5 +45,11 @@ public class Match extends JPanel{
         this.add(bye, BorderLayout.EAST);
     }
     
-    
+    public Team getTeam1() {
+        return this.team1;
+    }
+
+    public Team getTeam2() {
+        return this.team2;
+    }
 }
