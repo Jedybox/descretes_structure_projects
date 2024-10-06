@@ -157,7 +157,8 @@ class Main extends JFrame implements ActionListener {
         this.bracketPanel.repaint();
         
         if (this.teams.size() > 1) {
-            this.permutaionLabel.setText(Integer.toString(Combinations.posibleCombinations(this.teams.size())));
+            int perm = this.teams.size() % 2 == 0 ? Combinations.posibleCombinations(this.teams.size()) : Combinations.posibleCombinations(this.teams.size() - 1);
+            this.permutaionLabel.setText(Integer.toString(perm));
             this.permutaionLabel.revalidate();
             this.permutaionLabel.repaint();
         }
