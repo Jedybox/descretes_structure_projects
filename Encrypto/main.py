@@ -115,8 +115,17 @@ root.geometry("300x300")
 root.title("Main Menu")
 root.resizable(False, False)  # Disable window resizing
 
-# Load the image
-logo = PhotoImage(file="assets/cryptographyLogo.png").subsample(3, 3)  # Adjust subsample to resize image
+"""
+line 22 to line 28 is a last min change to the code to add a logo to the main menu
+"""
+
+import os
+
+# Change the working directory to the script's directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
+
+logo = PhotoImage(file=os.path.join("assets", "cryptographyLogo.png")).subsample(3, 3)  # Adjust subsample to resize image
 
 # Create a label to display the image
 logo_label = tk.Label(root, image=logo)
