@@ -9,7 +9,7 @@ class Main extends JFrame implements ActionListener {
     private Button bracket, inputTeams, clear;
     private JScrollPane teamsScrollPane;
     private JPanel teamsPanel, bracketPanel;
-    private JLabel permutaionLabel;
+    private JLabel combinationsLabel;
 
     Main() {
         this.setTitle("Match Maker");
@@ -55,16 +55,16 @@ class Main extends JFrame implements ActionListener {
         buttonPanel.setSize(100, 150);
         buttonPanel.setBackground(Color.LIGHT_GRAY);
         
-        permutaionLabel = new JLabel("0");
+        combinationsLabel = new JLabel("0");
 
         JPanel permutationPanel = new JPanel();
         permutationPanel.setLayout(new GridLayout(2, 1, 10, 10));
         permutationPanel.setBackground(Color.LIGHT_GRAY);
         permutationPanel.setPreferredSize(new Dimension(100, 150));
         permutationPanel.setVisible(true);
-        this.permutaionLabel = new JLabel();
+        this.combinationsLabel = new JLabel();
         permutationPanel.add(new JLabel("Combitations:"));
-        permutationPanel.add(permutaionLabel);
+        permutationPanel.add(combinationsLabel);
 
         // Sidebar Panel
         JPanel sidPanel = new JPanel();
@@ -158,15 +158,15 @@ class Main extends JFrame implements ActionListener {
         
         if (this.teams.size() > 1) {
             int perm = this.teams.size() % 2 == 0 ? Combinations.posibleCombinations(this.teams.size()) : Combinations.posibleCombinations(this.teams.size() - 1);
-            this.permutaionLabel.setText(Integer.toString(perm));
-            this.permutaionLabel.revalidate();
-            this.permutaionLabel.repaint();
+            this.combinationsLabel.setText(Integer.toString(perm));
+            this.combinationsLabel.revalidate();
+            this.combinationsLabel.repaint();
         }
             
     }
 
     private void clearTeams() {
-        this.permutaionLabel.setText("0");
+        this.combinationsLabel.setText("0");
         this.teams.clear();
         this.teamsPanel.removeAll();
         this.teamsPanel.revalidate();
