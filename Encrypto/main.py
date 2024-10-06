@@ -12,7 +12,7 @@ button_style = {
     "relief": tk.RAISED  # Button relief style
 }
 
-def show_encrypt_page():
+def show_encrypt_page() -> None:
     root.withdraw()  # Hide the main window
     encrypt_window = tk.Toplevel(root)
     encrypt_window.geometry("300x320")
@@ -47,7 +47,7 @@ def show_encrypt_page():
         key_entry.delete(0, tk.END)
         key_entry.insert(0, key)
     
-    def copy_encrypted_text():
+    def copy_encrypted_text() -> None:
         encrypted_text = encryted_text.get()
         if not encrypted_text:
             messagebox.showerror("Error", "No text to copy")
@@ -63,7 +63,7 @@ def show_encrypt_page():
     tk.Button(button_frame, text="Save Key", command= lambda: save_key(key_entry.get()), **button_style).pack(side=tk.LEFT, padx=5)
     tk.Button(button_frame, text="Copy Encrypted", command=copy_encrypted_text, **button_style).pack(side=tk.LEFT, padx=5)
 
-def show_decrypt_page():
+def show_decrypt_page() -> None:
     root.withdraw()  # Hide the main window
     decrypt_window = tk.Toplevel(root)
     decrypt_window.geometry("300x300")
@@ -103,11 +103,11 @@ def show_decrypt_page():
 
     tk.Button(decrypt_window, text="Decrypt Text", command=decrypt_and_display, **button_style).pack(pady=10)
     
-def close_page(window):
+def close_page(window) -> None:
     root.deiconify() 
     window.destroy()
 
-def exit_app():
+def exit_app() -> None:
     root.destroy()
 
 root = tk.Tk()
