@@ -40,4 +40,5 @@
 
 # Members
 
-<img src="[drawing.jpg](https://instagram.fmnl8-2.fna.fbcdn.net/v/t51.2885-19/446717344_762537626074923_8493034407785867977_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fmnl8-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=ELs4jl8CslQQ7kNvgEqcJ1B&_nc_gid=ace1ed9b99804675bb382cc9119b92c0&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AYB6hPd46POriU4orpsScznE0UZwv3kH_G_VHCAgP-5eVg&oe=67082954&_nc_sid=7a9f4b)" alt="drawing" style="width:200px;"/>
+![Jedy](https://instagram.fmnl8-2.fna.fbcdn.net/v/t51.2885-19/446717344_762537626074923_8493034407785867977_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fmnl8-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=ELs4jl8CslQQ7kNvgEqcJ1B&_nc_gid=ace1ed9b99804675bb382cc9119b92c0&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AYB6hPd46POriU4orpsScznE0UZwv3kH_G_VHCAgP-5eVg&oe=67082954&_nc_sid=7a9f4b)
+#### Jhon Ericsson D. Ytac ~ Programmer
