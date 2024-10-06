@@ -10,6 +10,10 @@
 
 <br>
 
+## Combination
+
+combination is a selection of items from a set that has distinct members, such that the order of selection does not matter (unlike permutations).
+
 ## Features
 The his program only consist one GUI page.
     
