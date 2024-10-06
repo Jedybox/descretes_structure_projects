@@ -18,8 +18,7 @@ combination is a selection of items from a set that has distinct members, such t
 The his program only consist one GUI page.
     
 
-#### Code for adding teams
----
+### Code for adding teams
 
 ```java
 private void addTeam() {
@@ -55,16 +54,16 @@ private void addTeam() {
     }        
 }
 ```
-#### What it does: 
+### What it does: 
 This method adds a team in the list (ArrayList) of teams that are going to be matched to each other. 
 As the user adds a teams it will display it to the 1teamsPanel and changes the possible combinaiton.
 
 ---
 
-<br>
 
-#### Code for generating matches
----
+
+### Code for generating matches
+
 ~~~ java
 private void generateBracket() {
     if (this.teams.size() < 2) {
@@ -82,7 +81,7 @@ private void generateBracket() {
 }
 ~~~
 
-#### What it does
+### What it does
 This code does not generate the matches but a static method named generateMatches from a class named Combinations.
 
 The first thing it does if check if the amount is less than two. If it does its will show a dialog message after that the method will stop other wise it will call the generateMatches and store it's returns to a variable which is then displayed.
@@ -91,7 +90,7 @@ The first thing it does if check if the amount is less than two. If it does its 
 
 <br>
 
-#### Code for clearing displayed teams and possible Combinations
+### Code for clearing displayed teams and possible Combinations
 ~~~ java
 private void clearTeams() {
     this.combinationsLabel.setText("0");
@@ -106,7 +105,7 @@ private void clearTeams() {
 }
 ~~~
 
-#### What it does 
+### What it does 
 It will remove the displayed teams, generated matches and possible combinations.
 
 ---
@@ -135,7 +134,7 @@ public static int posibleCombinations(int amountOfTeams) {
 }
 ~~~
 
-#### What it does
+### What it does
 These methods only calculates the possible combinations of inputed teams by the user. By using the formula of calculating combinations [n! / (n-k)!] we can predict the amount of different possible combinations/matches.
 
 ### Code for generateMatches method
@@ -172,5 +171,5 @@ public static ArrayList<Match> generateMatches(ArrayList<Team> teams) {
 }
 ~~~
 
-#### What it does 
+### What it does 
 It generates matches by randomly picking teams from the inputted teams. If the amount of teams is odd it first randomly pick a single team from the teams to labelled as bystander 
