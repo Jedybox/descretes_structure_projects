@@ -1,17 +1,13 @@
+#Encrypto gitignore files
+Encrypto/__pycache__/
+Encrypto/key.csv
+
 # Dart tool files
 passgen/passgen/.dart_tool/
 passgen/passgen/.flutter-plugins
 passgen/passgen/.flutter-plugins-dependencies
-
-# IDE settings
 passgen/passgen/.idea/
 passgen/passgen/*.iml
-
-# Build output
 passgen/passgen/build/
-
-# Flutter specific
 passgen/passgen/pubspec.lock (if not needed)
-
-# Other
 passgen/passgen/*.log
